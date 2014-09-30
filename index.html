@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Excel-vba-dicts : Enhance the functionality of Dictionary Modul">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Excel-vba-dicts</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/6234456/Excel-VBA-Dicts">View on GitHub</a>
+
+          <h1 id="project_title">Excel-vba-dicts</h1>
+          <h2 id="project_tagline">Enhance the functionality of Dictionary Modul</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/6234456/Excel-VBA-Dicts/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/6234456/Excel-VBA-Dicts/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<p><em><strong>Example :</strong></em> </p>
+
+<ul>
+<li>to load all the invoices with invoice number starting with 4 alphabetical letters on the spreadsheet "src"</li>
+<li>to set the default pieces to be 100</li>
+</ul><p>the spreadsheet "src"</p>
+
+<pre><code>             A                      B
+
+     1    Invoice Number          Pieces
+
+     2    RELD 12323              1400
+
+     3    RE 12324                500
+
+     4    RELD 12325          
+
+     5    RELD 12326              100
+</code></pre>
+
+<p><strong><em>1. Create a new instance</em></strong></p>
+
+<pre><code>
+     Dim dict As New Dicts
+     Set dict = New Dicts
+
+</code></pre>
+
+<p><strong><em>2. Load the dict</em></strong></p>
+
+<pre><code>
+Call dict.load("src", 1, 2, 2, , dict.reg("^[a-zA-Z]{4}\s"), False, 100)
+
+</code></pre>
+
+<p><strong><em>2. Loop through dict to see the result</em></strong></p>
+
+<pre><code>    Dim k
+
+    For Each k In dict.dict.keys
+        Debug.Print k &amp; "  " &amp; dict.dict(k)
+    Next k
+</code></pre>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<p>Placeholder</p>
+
+<h2>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h2>
+
+<p>Having trouble with Pages? You can contact sgfxqw(<strong>at</strong>)gmail(<strong>dot</strong>)com and I will help you sort it out.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Excel-vba-dicts maintained by <a href="https://github.com/6234456">6234456</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
